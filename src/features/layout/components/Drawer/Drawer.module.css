@@ -28,6 +28,12 @@
   transition: all 0.3s ease-in-out;
 }
 
+@media only screen and (max-width: 500px) {
+  .drawer {
+    width: 208px;
+  }
+}
+
 .drawer.open {
   height: 325px;
   pointer-events: auto;
@@ -36,12 +42,19 @@
 .navigationLink {
   height: 65px;
   color: var(--main-black);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
   padding: var(--spacing-lg) var(--spacing-xl);
 }
 
 .navigationLink:hover {
   background-color: var(--main-blue);
+}
+
+@media only screen and (min-width: 900px) {
+  .navigationLink {
+    font-size: var(--font-size-lg);
+    line-height: 1;
+  }
 }

@@ -16,6 +16,7 @@
 .language {
   font-size: var(--font-size-sm);
   font-weight: 500;
+  /* Use px: font-size changes but we need consistent line-height. */
   line-height: 18px;
 }
 
@@ -50,9 +51,6 @@
 }
 
 .languageIcon {
-  position: absolute;
-  top: -2px;
-  right: 5px;
   width: 26px;
   height: 18px;
   object-fit: cover;
@@ -60,11 +58,64 @@
   border-radius: 3px;
 }
 
+.languageIconDisplay {
+  position: absolute;
+  top: -2px;
+  right: 5px;
+}
+
 @media only screen and (min-width: 1270px) {
-  .languageIcon {
+  .languageIconDisplay {
     position: static;
     top: 0;
     right: 0;
     margin-top: -5px;
+  }
+}
+
+.languageMenu {
+  --light-shadow: rgba(34, 34, 34, 0.7);
+  --dark-shadow: rgba(17, 17, 17, 0.7);
+  position: absolute;
+  top: 100%;
+  right: -13px;
+  width: max-content;
+  margin-top: calc(var(--spacing-sm) / 2);
+  background-color: var(--main-white);
+  padding: calc(var(--spacing-sm) / 4);
+  border-radius: calc(var(--spacing-sm) / 2);
+  box-shadow:
+    0 10px 15px -3px var(--dark-shadow),
+    0 4px 6px -4px var(--light-shadow);
+}
+
+.languageMenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing-sm) / 2);
+  margin-block: calc(var(--spacing-sm) / 2);
+  padding-block: calc(var(--spacing-sm) / 4);
+  padding-inline: calc(var(--spacing-sm) / 2);
+}
+
+.languageMenuItemContent {
+  color: var(--main-black);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  /* Use px: font-size changes but we need consistent line-height. */
+  line-height: 25px;
+  transition-duration: 700ms;
+}
+
+@media only screen and (min-width: 900px) {
+  .languageMenuItemContent {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .languageMenuItemContent {
+    font-size: var(--font-size-base);
   }
 }
