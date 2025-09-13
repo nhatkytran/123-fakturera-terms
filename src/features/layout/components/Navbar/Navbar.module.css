@@ -13,7 +13,7 @@
 .navigation {
   width: 75%;
   padding-top: 40px;
-  color: #fff;
+  color: var(--main-white);
   justify-content: space-between;
 }
 

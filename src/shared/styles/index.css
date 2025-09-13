@@ -14,6 +14,13 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 50px;
+
+  --main-white: #ffffff;
+  --main-blue: #8cc0ff;
+  --main-green: #089e1e;
+  --main-black: #000000e6;
+  --sub-black: #00000099;
+  --shadow-black: #0000001a;
 }
 
 *,
