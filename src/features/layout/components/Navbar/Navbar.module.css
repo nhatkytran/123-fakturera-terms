@@ -53,6 +53,10 @@
   font-weight: 500;
 }
 
+.language {
+  line-height: 18px;
+}
+
 @media only screen and (min-width: 900px) {
   .language {
     font-size: var(--font-size-lg);
@@ -94,15 +98,33 @@
 }
 
 .languageContainer {
+  position: relative;
   gap: var(--spacing-sm);
-  padding-right: var(--spacing-sm);
+  padding-right: calc(var(--spacing-md) * 2);
+}
+
+@media only screen and (min-width: 1270px) {
+  .languageContainer {
+    padding-right: var(--spacing-sm);
+  }
 }
 
 .languageIcon {
-  margin-top: -5px;
+  position: absolute;
+  top: -2px;
+  right: 5px;
   width: 26px;
   height: 18px;
   object-fit: cover;
   object-position: center center;
   border-radius: 3px;
+}
+
+@media only screen and (min-width: 1270px) {
+  .languageIcon {
+    position: static;
+    top: 0;
+    right: 0;
+    margin-top: -5px;
+  }
 }

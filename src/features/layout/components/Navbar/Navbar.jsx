@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 import { LOGIN_URL, NAVIGATION_LINKS } from '@/features/layout/data';
-import BurgerIcon from '@/shared/icons/BurgerIcon';
+import Drawer from '@/features/layout/components/Drawer';
 import styles from './Navbar.module.css';
 
 /** Navbar component. */
@@ -16,9 +16,7 @@ export default function Navbar() {
             alt="Diamond logo"
           />
         </a>
-        <div>
-          <BurgerIcon />
-        </div>
+        <Drawer />
         <div className={styles.actionsContainer}>
           <ul className={styles.navigationList}>
             {NAVIGATION_LINKS.map((link, index) => (
