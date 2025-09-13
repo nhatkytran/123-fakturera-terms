@@ -1,19 +1,56 @@
-.navigationContainer {
+.navigationContainer,
+.navigation,
+.actionsContainer,
+.navigationList,
+.languageContainer {
   display: flex;
   align-items: center;
+}
+
+.navigationContainer {
   justify-content: center;
 }
 
 .navigation {
   width: 75%;
-  padding-top: 2.5rem;
+  padding-top: 40px;
   color: #fff;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
 .logoImage {
   height: 2rem;
   margin-top: -0.5rem;
+}
+
+.actionsContainer {
+  gap: var(--spacing-2xl);
+}
+
+.navigationLink,
+.language {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.navigationLink {
+  padding-inline: var(--spacing-lg);
+}
+
+.navigationLinkLast {
+  padding-right: 0;
+}
+
+.languageContainer {
+  gap: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+.languageIcon {
+  margin-top: -5px;
+  width: 26px;
+  height: 18px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 3px;
 }
