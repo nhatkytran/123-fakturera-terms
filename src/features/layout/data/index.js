@@ -1,5 +1,5 @@
 /** Root URL */
-export const ROOT_URL = '/';
+export const LOGIN_URL = 'https://online.123fakturera.se/login/';
 
 /** Navigation links */
 export const NAVIGATION_LINKS = [

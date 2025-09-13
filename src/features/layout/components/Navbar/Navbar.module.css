@@ -1,7 +1,6 @@
 .navigationContainer,
 .navigation,
 .actionsContainer,
-.navigationList,
 .languageContainer {
   display: flex;
   align-items: center;
@@ -18,6 +17,16 @@
   justify-content: space-between;
 }
 
+.logo {
+  display: none;
+}
+
+@media only screen and (min-width: 1270px) {
+  .logo {
+    display: block;
+  }
+}
+
 .logoImage {
   height: 2rem;
   margin-top: -0.5rem;
@@ -27,10 +36,53 @@
   gap: var(--spacing-2xl);
 }
 
+.navigationList {
+  display: none;
+}
+
+@media only screen and (min-width: 1270px) {
+  .navigationList {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .navigationLink,
 .language {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   font-weight: 500;
+}
+
+@media only screen and (min-width: 900px) {
+  .language {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .language {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media only screen and (min-width: 1270px) {
+  .language {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media only screen and (min-width: 1390px) {
+  .navigationLink,
+  .language {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media only screen and (min-width: 1590px) {
+  .navigationLink,
+  .language {
+    font-size: var(--font-size-md);
+  }
 }
 
 .navigationLink {
