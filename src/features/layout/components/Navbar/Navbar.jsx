@@ -2,6 +2,7 @@ import clsx from 'clsx';
 
 import { LOGIN_URL, NAVIGATION_LINKS } from '@/features/layout/data';
 import Drawer from '@/features/layout/components/Drawer';
+import LanguageSelector from '@/features/layout/components/LanguageSelector';
 import styles from './Navbar.module.css';
 
 /** Navbar component. */
@@ -33,14 +34,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className={styles.languageContainer}>
-            <span className={styles.language}>English</span>
-            <img
-              className={styles.languageIcon}
-              src="https://storage.123fakturere.no/public/flags/GB.png"
-              alt="GB flag icon"
-            />
-          </div>
+          <LanguageSelector />
         </div>
       </nav>
     </section>
