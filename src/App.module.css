@@ -1,0 +1,26 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.backgroundContainer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.backgroundImage {
+  width: 100%;
+}
+
+.navigationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+  width: 75%;
+  padding-top: 2.5rem;
+  color: #fff;
+}
