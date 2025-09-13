@@ -8,4 +8,12 @@
   width: 75%;
   padding-top: 2.5rem;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoImage {
+  height: 2rem;
+  margin-top: -0.5rem;
 }
