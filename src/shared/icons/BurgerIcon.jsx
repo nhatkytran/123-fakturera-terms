@@ -1,7 +1,7 @@
 /**
  * Burger icon component.
- * @param {Object} props - The props object.
- * @param {string} props.className - The class name for the icon.
+ * @param {Object} props The props object.
+ * @param {string} props.className The class name for the icon.
  */
 export default function BurgerIcon({ className, ...props }) {
   return (
