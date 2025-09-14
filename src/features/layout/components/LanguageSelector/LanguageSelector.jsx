@@ -2,6 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { LANGUAGES, SVENSKA } from '@/features/layout/data';
+import LanguageMenu from './components/LanguageMenu';
 import styles from './LanguageSelector.module.css';
 
 /** Language selector component. */
@@ -24,16 +25,9 @@ export default function LanguageSelector() {
         src={language.flagSrc}
         alt={`${language.abbreviation} flag icon`}
       />
-      <aside className={styles.languageMenu}>
-        <ul>
-          {LANGUAGES.map(lang => (
-            <li key={lang.language} className={styles.languageMenuItem} onClick={handleLanguageChange(lang)}>
-              <p className={styles.languageMenuItemContent}>{lang.language}</p>
-              <img className={styles.languageIcon} src={lang.flagSrc} alt={`${lang.abbreviation} flag icon`} />
-            </li>
-          ))}
-        </ul>
-      </aside>
+      {/* Based on the current working state of the real page, we call LanguageMenu 2 times to replicate the behavior. */}
+      <LanguageMenu isSmallDesktop onLanguageChange={handleLanguageChange} />
+      <LanguageMenu isSmallDesktop={false} onLanguageChange={handleLanguageChange} />
     </div>
   );
 }
