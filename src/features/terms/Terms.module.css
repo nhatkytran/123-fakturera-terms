@@ -7,7 +7,7 @@
 }
 
 .container {
-  width: 70%;
+  width: 90%;
 }
 
 .header {
@@ -62,4 +62,60 @@
 .title {
   font-size: var(--font-size-xl);
   color: var(--main-white);
+}
+
+.closeButton {
+  width: 50%;
+  min-width: max-content;
+  max-width: 270px;
+  background-color: var(--main-green);
+  color: var(--main-white);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  padding-block: var(--spacing-sm);
+  padding-inline: calc(var(--spacing-md) * 2);
+  border-radius: var(--spacing-2xl);
+}
+
+@media only screen and (min-width: 675px) {
+  .closeButton {
+    font-size: var(--font-size-base);
+    width: 35vw;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .closeButton {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .closeButton {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media only screen and (min-width: 1270px) {
+  .closeButton {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media only screen and (min-width: 1390px) {
+  .closeButton {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media only screen and (min-width: 1590px) {
+  .closeButton {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media only screen and (min-width: 1910px) {
+  .closeButton {
+    font-size: var(--font-size-lg);
+  }
 }
