@@ -11,7 +11,7 @@ import { Terms } from '../../models';
 const createTextGroup = (dto, filterValue) => {
   return Object.entries(dto)
     .filter(([key]) => key.startsWith(filterValue))
-    .map(([key, value]) => [Number(key.at(-1)), value])
+    .map(([key, value]) => [Number(key.split('_').at(-1)), value])
     .sort((a, b) => a[0] - b[0])
     .map(([_, value]) => value);
 };
@@ -38,4 +38,5 @@ class TermsMapper {
   }
 }
 
-export default TermsMapper;
+/** Terms mapper. */
+export const termsMapper = new TermsMapper();

@@ -1,4 +1,6 @@
 import supabase from '@/shared/config/supabase';
+import { TranslationsDto } from '../dtos';
+import { translationMapper } from '../mappers/translationMapper';
 
 /**
  * Reformat data.
@@ -43,5 +45,6 @@ export async function getTranslations(languageCode = 'en') {
     throw new Error('Something went wrong!');
   }
 
-  return reformatData(data);
+  const translationsDto = new TranslationsDto(reformatData(data));
+  return translationMapper.fromDto(translationsDto);
 }

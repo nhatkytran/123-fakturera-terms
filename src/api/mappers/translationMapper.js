@@ -1,6 +1,8 @@
 import { navigationMapper } from './navigationMapper';
 import { termsMapper } from './termsMapper';
 import { TranslationsDto } from '../dtos';
+import { NavigationDto } from '../dtos/navigationDto';
+import { TermsDto } from '../dtos/termsDto';
 import { Translations } from '../../models';
 
 /** Translation mapper. */
@@ -14,10 +16,11 @@ class TranslationMapper {
     if (!(dto instanceof TranslationsDto)) {
       throw new Error('Invalid translations dto!');
     }
-    const navigation = navigationMapper.fromDto(dto.navigation);
-    const terms = termsMapper.fromDto(dto.terms);
+    const navigation = navigationMapper.fromDto(new NavigationDto(dto.navigation));
+    const terms = termsMapper.fromDto(new TermsDto(dto.terms));
     return new Translations({ navigation, terms });
   }
 }
 
+/** Translation mapper. */
 export const translationMapper = new TranslationMapper();

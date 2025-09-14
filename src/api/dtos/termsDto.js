@@ -28,9 +28,9 @@ export class TermsDto {
     this.terms_text_end_14 = dto.terms_text_end_14;
     this.terms_text_end_15 = dto.terms_text_end_15;
     this.terms_text_end_16 = dto.terms_text_end_16;
-    this.terms_text_end_17 = dto.terms_text_end_16;
-    this.terms_text_end_18 = dto.terms_text_end_16;
-    this.terms_text_end_19 = dto.terms_text_end_16;
-    this.terms_text_end_20 = dto.terms_text_end_16;
+    this.terms_text_end_17 = dto.terms_text_end_17;
+    this.terms_text_end_18 = dto.terms_text_end_18;
+    this.terms_text_end_19 = dto.terms_text_end_19;
+    this.terms_text_end_20 = dto.terms_text_end_20;
   }
 }
