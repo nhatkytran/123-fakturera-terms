@@ -21,7 +21,14 @@ export default defineConfig([
     },
     plugins: { jsdoc },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
       'no-console': ['error', { allow: ['warn', 'error'] }],
       'eol-last': ['error', 'always'],
       'jsdoc/require-jsdoc': [
