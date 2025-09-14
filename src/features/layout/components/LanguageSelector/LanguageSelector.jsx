@@ -2,7 +2,6 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { LANGUAGES, SVENSKA } from '@/features/layout/data';
-import LanguageMenu from './components/LanguageMenu';
 import styles from './LanguageSelector.module.css';
 
 /**
@@ -34,7 +33,21 @@ export default function LanguageSelector({ isSmallDesktop = true }) {
         src={language.flagSrc}
         alt={`${language.abbreviation} flag icon`}
       />
-      <LanguageMenu isSmallDesktop={isSmallDesktop} onLanguageChange={handleLanguageChange} />
+      <aside
+        className={clsx(
+          styles.languageMenu,
+          isSmallDesktop ? styles.languageMenuSmallDesktop : styles.languageMenuLargeDesktop,
+        )}
+      >
+        <ul>
+          {LANGUAGES.map(lang => (
+            <li key={lang.language} className={styles.languageMenuItem} onClick={handleLanguageChange(lang)}>
+              <p className={styles.languageMenuItemContent}>{lang.language}</p>
+              <img className={styles.languageIcon} src={lang.flagSrc} alt={`${lang.abbreviation} flag icon`} />
+            </li>
+          ))}
+        </ul>
+      </aside>
     </div>
   );
 }
