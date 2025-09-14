@@ -1,6 +1,6 @@
 /** Terms mapper. */
 import { TermsDto } from '../dtos';
-import { Terms } from '../models';
+import { Terms } from '../../models';
 
 /**
  * Create text group.

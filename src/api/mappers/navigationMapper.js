@@ -1,5 +1,5 @@
 import { NavigationDto } from '../dtos';
-import { Navigation } from '../models';
+import { Navigation } from '../../models';
 
 /** Navigation mapper. */
 class NavigationMapper {
