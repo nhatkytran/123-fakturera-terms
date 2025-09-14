@@ -1,3 +1,4 @@
+import MainButton from '@/shared/components/MainButton';
 import styles from './Terms.module.css';
 
 /** Terms component. */
@@ -7,7 +8,7 @@ export default function Terms() {
       <div className={styles.container}>
         <header className={styles.header}>
           <h1 className={styles.title}>Terms</h1>
-          <button className={styles.closeButton}>Close and Go Back</button>
+          <MainButton />
         </header>
       </div>
     </section>

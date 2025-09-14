@@ -1,0 +1,55 @@
+.mainButton {
+  width: 50%;
+  min-width: max-content;
+  max-width: 270px;
+  background-color: var(--main-green);
+  color: var(--main-white);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  padding-block: var(--spacing-sm);
+  padding-inline: calc(var(--spacing-md) * 2);
+  border-radius: var(--spacing-2xl);
+}
+
+@media only screen and (min-width: 675px) {
+  .mainButton {
+    font-size: var(--font-size-base);
+    width: 35vw;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .mainButton {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .mainButton {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media only screen and (min-width: 1270px) {
+  .mainButton {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media only screen and (min-width: 1390px) {
+  .mainButton {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media only screen and (min-width: 1590px) {
+  .mainButton {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media only screen and (min-width: 1910px) {
+  .mainButton {
+    font-size: var(--font-size-lg);
+  }
+}
