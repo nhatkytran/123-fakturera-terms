@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 
+import { useOpen, useOutsideClick } from '@/shared/hooks';
 import { LANGUAGES, SVENSKA } from '@/features/layout/data';
 import styles from './LanguageSelector.module.css';
 
@@ -11,6 +12,19 @@ import styles from './LanguageSelector.module.css';
  */
 export default function LanguageSelector({ isSmallDesktop = true }) {
   const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === SVENSKA));
+  const { isOpen, handleOpen, handleClose } = useOpen();
+  const ref = useOutsideClick({ handler: handleClose, listenCapturing: false });
+
+  /**
+   * Handle language menu open.
+   * @param {Event} event The click event.
+   */
+  const handleLanguageMenuOpen = event => {
+    if (!isOpen) {
+      event.stopPropagation();
+    }
+    handleOpen();
+  };
 
   /**
    * Handle language change.
@@ -22,6 +36,7 @@ export default function LanguageSelector({ isSmallDesktop = true }) {
 
   return (
     <div
+      onClick={handleLanguageMenuOpen}
       className={clsx(
         styles.languageContainer,
         isSmallDesktop ? styles.languageContainerSmallDesktop : styles.languageContainerLargeDesktop,
@@ -34,9 +49,11 @@ export default function LanguageSelector({ isSmallDesktop = true }) {
         alt={`${language.abbreviation} flag icon`}
       />
       <aside
+        ref={ref}
         className={clsx(
           styles.languageMenu,
           isSmallDesktop ? styles.languageMenuSmallDesktop : styles.languageMenuLargeDesktop,
+          !isOpen && styles.hidden,
         )}
       >
         <ul>
