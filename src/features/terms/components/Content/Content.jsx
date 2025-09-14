@@ -7,7 +7,12 @@ const test =
 export default function Content() {
   return (
     <div className={styles.contentBox}>
-      <p className={styles.contentText} dangerouslySetInnerHTML={{ __html: test }}></p>
+      <div>
+        <p className={styles.contentText} dangerouslySetInnerHTML={{ __html: test }}></p>
+      </div>
+      <div>
+        <p className={styles.contentText} dangerouslySetInnerHTML={{ __html: test }}></p>
+      </div>
     </div>
   );
 }

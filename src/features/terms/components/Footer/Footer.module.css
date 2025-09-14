@@ -1,0 +1,6 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing-3xl);
+  padding-bottom: calc(var(--spacing-3xl) + 4px);
+}

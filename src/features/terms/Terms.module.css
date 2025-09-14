@@ -3,7 +3,6 @@
   align-items: flex-start;
   justify-content: center;
   padding-top: var(--spacing-md);
-  min-height: 2000px;
 }
 
 .container {

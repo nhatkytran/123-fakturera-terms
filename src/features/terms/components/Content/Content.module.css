@@ -1,4 +1,7 @@
 .contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
   width: 100%;
   max-width: 750px;
   background-color: var(--main-white);
