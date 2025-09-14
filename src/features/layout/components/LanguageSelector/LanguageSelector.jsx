@@ -5,8 +5,12 @@ import { LANGUAGES, SVENSKA } from '@/features/layout/data';
 import LanguageMenu from './components/LanguageMenu';
 import styles from './LanguageSelector.module.css';
 
-/** Language selector component. */
-export default function LanguageSelector() {
+/**
+ * Language selector component.
+ * @param {Object} props The props object.
+ * @param {boolean} props.isSmallDesktop Whether it is small desktop.
+ */
+export default function LanguageSelector({ isSmallDesktop = true }) {
   const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === SVENSKA));
 
   /**
@@ -18,16 +22,19 @@ export default function LanguageSelector() {
   };
 
   return (
-    <div className={styles.languageContainer}>
+    <div
+      className={clsx(
+        styles.languageContainer,
+        isSmallDesktop ? styles.languageContainerSmallDesktop : styles.languageContainerLargeDesktop,
+      )}
+    >
       <span className={styles.language}>{language.language}</span>
       <img
         className={clsx(styles.languageIcon, styles.languageIconDisplay)}
         src={language.flagSrc}
         alt={`${language.abbreviation} flag icon`}
       />
-      {/* Based on the current working state of the real page, we call LanguageMenu 2 times to replicate the behavior. */}
-      <LanguageMenu isSmallDesktop onLanguageChange={handleLanguageChange} />
-      <LanguageMenu isSmallDesktop={false} onLanguageChange={handleLanguageChange} />
+      <LanguageMenu isSmallDesktop={isSmallDesktop} onLanguageChange={handleLanguageChange} />
     </div>
   );
 }

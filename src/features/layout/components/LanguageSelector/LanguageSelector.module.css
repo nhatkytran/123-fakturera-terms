@@ -7,9 +7,19 @@
   cursor: pointer;
 }
 
+.languageContainerLargeDesktop {
+  display: none;
+}
+
 @media only screen and (min-width: 1270px) {
   .languageContainer {
     padding-right: var(--spacing-sm);
+  }
+  .languageContainerSmallDesktop {
+    display: none;
+  }
+  .languageContainerLargeDesktop {
+    display: flex;
   }
 }
 

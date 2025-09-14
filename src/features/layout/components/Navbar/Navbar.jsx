@@ -34,7 +34,9 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <LanguageSelector />
+          {/* Based on the current working state of the real page, we call LanguageSelector 2 times to replicate the behavior. */}
+          <LanguageSelector isSmallDesktop />
+          <LanguageSelector isSmallDesktop={false} />
         </div>
       </nav>
     </section>
