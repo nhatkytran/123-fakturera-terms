@@ -1,0 +1,1 @@
+export { navigationMapper } from './navigationMapper';
