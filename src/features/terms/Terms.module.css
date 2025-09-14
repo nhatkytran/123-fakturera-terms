@@ -12,6 +12,7 @@
 
 .layout {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: calc(var(--spacing-2xl) - var(--spacing-md));
 }

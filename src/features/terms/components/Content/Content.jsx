@@ -1,6 +1,13 @@
 import styles from './Content.module.css';
 
+const test =
+  '<b>BY</b> clicking Invoice Now, you choose to register according to the information that you have typed in and the text on the registration page and the terms here, and you at the same time accept the terms here.';
+
 /** Content component. */
 export default function Content() {
-  return <div className={styles.contentBox}>Content</div>;
+  return (
+    <div className={styles.contentBox}>
+      <p className={styles.contentText} dangerouslySetInnerHTML={{ __html: test }}></p>
+    </div>
+  );
 }
