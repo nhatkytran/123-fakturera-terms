@@ -1,0 +1,7 @@
+.contentBox {
+  width: 100%;
+  max-width: 750px;
+  background-color: var(--main-white);
+  padding: calc(var(--spacing-md) * 2);
+  border-radius: var(--spacing-md);
+}
