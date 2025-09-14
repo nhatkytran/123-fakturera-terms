@@ -65,6 +65,12 @@
   }
 }
 
+@media only screen and (min-width: 1910px) {
+  .language {
+    font-size: var(--font-size-lg);
+  }
+}
+
 .languageIcon {
   width: 26px;
   height: 18px;
@@ -85,6 +91,12 @@
     top: 0;
     right: 0;
     margin-top: -5px;
+  }
+}
+
+@media only screen and (min-width: 1910px) {
+  .languageIconDisplay {
+    margin-top: -2px;
   }
 }
 

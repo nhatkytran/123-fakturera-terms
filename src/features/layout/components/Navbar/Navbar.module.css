@@ -63,6 +63,12 @@
   }
 }
 
+@media only screen and (min-width: 1910px) {
+  .navigationLink {
+    font-size: var(--font-size-lg);
+  }
+}
+
 .navigationLink {
   padding-inline: var(--spacing-lg);
 }

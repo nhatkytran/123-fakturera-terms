@@ -1,10 +1,11 @@
 import Layout from './features/layout';
+import Terms from './features/terms';
 
 /** App component. */
 export default function App() {
   return (
     <Layout>
-      <div style={{ height: '2000px' }}></div>
+      <Terms />
     </Layout>
   );
 }

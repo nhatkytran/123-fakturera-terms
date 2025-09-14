@@ -2,7 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { useMenuToggle } from '@/shared/hooks';
-import { LANGUAGES, SVENSKA } from '@/features/layout/data';
+import { ENGLISH, LANGUAGES } from '@/features/layout/data';
 import styles from './LanguageSelector.module.css';
 
 /**
@@ -11,7 +11,7 @@ import styles from './LanguageSelector.module.css';
  * @param {boolean} props.isSmallDesktop Whether it is small desktop.
  */
 export default function LanguageSelector({ isSmallDesktop = true }) {
-  const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === SVENSKA));
+  const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === ENGLISH));
   const { isOpen, ref, handleMenuOpen } = useMenuToggle();
 
   /**

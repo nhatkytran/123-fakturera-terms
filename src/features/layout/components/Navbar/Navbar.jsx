@@ -29,7 +29,7 @@ export default function Navbar() {
                   )}
                   href={link.href}
                 >
-                  <p>{link.label}</p>
+                  {link.label}
                 </a>
               </li>
             ))}
