@@ -13,8 +13,14 @@ export const NAVIGATION_LINKS = [
 /** Swedish language. */
 export const SVENSKA = 'Svenska';
 
+/** Swedish language code. */
+export const SVENSKA_LANGUAGE_CODE = 'sv';
+
 /** English language. */
 export const ENGLISH = 'English';
+
+/** English language code. */
+export const ENGLISH_LANGUAGE_CODE = 'en';
 
 /** Language options. */
 export const LANGUAGES = [

@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import clsx from 'clsx';
 
-import { useMenuToggle } from '@/shared/hooks';
-import { ENGLISH, LANGUAGES } from '@/features/layout/data';
+import { useLanguageTranslations, useMenuToggle } from '@/shared/hooks';
+import { LANGUAGES } from '@/features/layout/data';
 import styles from './LanguageSelector.module.css';
 
 /**
@@ -11,15 +10,17 @@ import styles from './LanguageSelector.module.css';
  * @param {boolean} props.isSmallDesktop Whether it is small desktop.
  */
 export default function LanguageSelector({ isSmallDesktop = true }) {
-  const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === ENGLISH));
-  const { isOpen, ref, handleMenuOpen } = useMenuToggle();
+  const { isOpen, ref, handleMenuOpen, handleClose } = useMenuToggle();
+  const { language, handleLanguageChange } = useLanguageTranslations();
 
   /**
-   * Handle language change.
+   * Handle language selection.
    * @param {Object} lang The language object.
    */
-  const handleLanguageChange = lang => () => {
-    setLanguage(lang);
+  const handleSelectLanguage = lang => event => {
+    event.stopPropagation();
+    handleLanguageChange(lang);
+    handleClose();
   };
 
   return (
@@ -46,7 +47,7 @@ export default function LanguageSelector({ isSmallDesktop = true }) {
       >
         <ul>
           {LANGUAGES.map(lang => (
-            <li key={lang.language} className={styles.languageMenuItem} onClick={handleLanguageChange(lang)}>
+            <li key={lang.language} className={styles.languageMenuItem} onClick={handleSelectLanguage(lang)}>
               <p className={styles.languageMenuItemContent}>{lang.language}</p>
               <img className={styles.languageIcon} src={lang.flagSrc} alt={`${lang.abbreviation} flag icon`} />
             </li>
