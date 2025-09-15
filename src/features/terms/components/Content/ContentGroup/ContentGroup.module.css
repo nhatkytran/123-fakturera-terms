@@ -1,0 +1,36 @@
+.contentText {
+  color: var(--sub-black);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.contentText a {
+  display: inline;
+  color: var(--main-dark-blue);
+}
+
+@media only screen and (min-width: 900px) {
+  .contentText {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .contentText {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media only screen and (min-width: 1390px) {
+  .contentText {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media only screen and (min-width: 1590px) {
+  .contentText {
+    font-size: var(--font-size-base);
+  }
+}

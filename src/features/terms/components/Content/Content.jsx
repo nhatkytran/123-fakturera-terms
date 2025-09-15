@@ -1,4 +1,5 @@
 import { useLanguageTranslations } from '@/shared/hooks';
+import ContentGroup from './ContentGroup';
 import styles from './Content.module.css';
 
 /** Content component. */
@@ -11,21 +12,9 @@ export default function Content() {
 
   return (
     <div className={styles.contentBox}>
-      <div>
-        {textStartGroup.map((text, index) => (
-          <p key={index} className={styles.contentText} dangerouslySetInnerHTML={{ __html: text }}></p>
-        ))}
-      </div>
-      <div>
-        {textMiddleGroup.map((text, index) => (
-          <p key={index} className={styles.contentText} dangerouslySetInnerHTML={{ __html: text }}></p>
-        ))}
-      </div>
-      <div>
-        {textEndGroup.map((text, index) => (
-          <p key={index} className={styles.contentText} dangerouslySetInnerHTML={{ __html: text }}></p>
-        ))}
-      </div>
+      {[textStartGroup, textMiddleGroup, textEndGroup].map((textGroup, index) => (
+        <ContentGroup key={index} textGroup={textGroup} />
+      ))}
     </div>
   );
 }
