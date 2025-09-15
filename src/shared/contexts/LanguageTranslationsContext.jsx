@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { getTranslations } from '@/api/services';
 
 const LanguageTranslationsContext = createContext(undefined);
 
@@ -9,6 +10,18 @@ const LanguageTranslationsContext = createContext(undefined);
  */
 const LanguageTranslationsProvider = ({ children }) => {
   const [translations, setTranslations] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const translations = await getTranslations();
+        setTranslations(translations);
+      } catch (error) {
+        console.error(error);
+        console.error('Something went wrong fetching language translations!');
+      }
+    })();
+  }, []);
 
   return (
     <LanguageTranslationsContext.Provider value={{ translations, setTranslations }}>

@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-
-import { getTranslations } from '@/api/services';
 import { useLanguageTranslations } from '@/shared/hooks';
 import styles from './Content.module.css';
 
@@ -13,14 +10,6 @@ export default function Content() {
 
   // eslint-disable-next-line no-console
   console.log(translations);
-
-  useEffect(() => {
-    (async () => {
-      const translations = await getTranslations();
-      // eslint-disable-next-line no-console
-      console.log(translations);
-    })();
-  }, []);
 
   return (
     <div className={styles.contentBox}>
