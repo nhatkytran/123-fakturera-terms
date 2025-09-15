@@ -1,12 +1,18 @@
 import clsx from 'clsx';
 
-import { LOGIN_URL, NAVIGATION_LINKS } from '@/features/layout/data';
+import { useLanguageTranslations } from '@/shared/hooks';
+import { LOGIN_URL, getNavigationLinks } from '@/features/layout/data';
 import Drawer from '@/features/layout/components/Drawer';
 import LanguageSelector from '@/features/layout/components/LanguageSelector';
 import styles from './Navbar.module.css';
 
 /** Navbar component. */
 export default function Navbar() {
+  const {
+    translations: { navigation },
+  } = useLanguageTranslations();
+  const navigationLinks = getNavigationLinks(navigation);
+
   return (
     <section className={styles.navigationContainer}>
       <nav className={styles.navigation}>
@@ -20,12 +26,12 @@ export default function Navbar() {
         <Drawer />
         <div className={styles.actionsContainer}>
           <ul className={styles.navigationList}>
-            {NAVIGATION_LINKS.map((link, index) => (
+            {navigationLinks.map((link, index) => (
               <li key={link.label}>
                 <a
                   className={clsx(
                     styles.navigationLink,
-                    index === NAVIGATION_LINKS.length - 1 && styles.navigationLinkLast,
+                    index === navigationLinks.length - 1 && styles.navigationLinkLast,
                   )}
                   href={link.href}
                 >

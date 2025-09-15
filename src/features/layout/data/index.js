@@ -2,13 +2,24 @@
 export const LOGIN_URL = 'https://online.123fakturera.se/login/';
 
 /** Navigation links */
-export const NAVIGATION_LINKS = [
-  { label: 'Home', href: 'https://www.123fakturera.se/index.html' },
-  { label: 'Order', href: 'https://www.123fakturera.se/bestall.html' },
-  { label: 'Our Customers', href: 'https://www.123fakturera.se/kunder.html' },
-  { label: 'About us', href: 'https://www.123fakturera.se/omoss.html' },
-  { label: 'Contact Us', href: 'https://www.123fakturera.se/kontaktaoss.html' },
+const NAVIGATION_LINKS = [
+  { key: 'home', label: 'Home', href: 'https://www.123fakturera.se/index.html' },
+  { key: 'order', label: 'Order', href: 'https://www.123fakturera.se/bestall.html' },
+  { key: 'ourCustomer', label: 'Our Customers', href: 'https://www.123fakturera.se/kunder.html' },
+  { key: 'aboutUs', label: 'About us', href: 'https://www.123fakturera.se/omoss.html' },
+  { key: 'contactUs', label: 'Contact Us', href: 'https://www.123fakturera.se/kontaktaoss.html' },
 ];
+
+/**
+ * Get navigation links.
+ * @param {Object} navigationTranslations The navigation translations.
+ */
+export const getNavigationLinks = navigationTranslations => {
+  return NAVIGATION_LINKS.map(link => ({
+    ...link,
+    label: navigationTranslations[link.key],
+  }));
+};
 
 /** Swedish language. */
 export const SVENSKA = 'Svenska';

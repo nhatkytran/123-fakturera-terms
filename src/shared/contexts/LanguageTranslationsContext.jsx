@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react';
 import { getTranslations } from '@/api/services';
 import { SVENSKA, SVENSKA_LANGUAGE_CODE, ENGLISH, ENGLISH_LANGUAGE_CODE, LANGUAGES } from '@/features/layout/data';
 
-const LanguageTranslationsContext = createContext(undefined);
+const LanguageTranslationsContext = createContext();
 
 const MAP_LANGUAGE_TO_LANGUAGE_CODE = {
   [ENGLISH]: ENGLISH_LANGUAGE_CODE,
