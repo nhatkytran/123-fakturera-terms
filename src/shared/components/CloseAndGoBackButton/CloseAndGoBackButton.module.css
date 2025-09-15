@@ -11,6 +11,12 @@
   border-radius: var(--spacing-2xl);
 }
 
+@media only screen and (min-width: 575px) {
+  .mainButton {
+    width: 50%;
+  }
+}
+
 @media only screen and (min-width: 675px) {
   .mainButton {
     font-size: var(--font-size-base);
