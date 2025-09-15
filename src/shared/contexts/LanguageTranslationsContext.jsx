@@ -10,13 +10,16 @@ const MAP_LANGUAGE_TO_LANGUAGE_CODE = {
   [SVENSKA]: SVENSKA_LANGUAGE_CODE,
 };
 
+const LANGUAGE_KEY = 'app-language';
+
 /**
  * Language translations provider.
  * @param {Object} props The props object.
  * @param {React.ReactNode} props.children The children elements.
  */
 const LanguageTranslationsProvider = ({ children }) => {
-  const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === ENGLISH));
+  const [language, setLanguage] = useState(LANGUAGES.find(lang => lang.language === SVENSKA));
+  const [isLanguageChecked, setIsLanguageChecked] = useState(false);
   const [translations, setTranslations] = useState({});
 
   /**
@@ -28,17 +31,28 @@ const LanguageTranslationsProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    setIsLanguageChecked(true);
+    const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+    if (storedLanguage) {
+      setLanguage(JSON.parse(storedLanguage));
+    }
+  }, []);
+
+  useEffect(() => {
     (async () => {
       try {
-        const languageCode = MAP_LANGUAGE_TO_LANGUAGE_CODE[language.language];
-        const translations = await getTranslations(languageCode);
-        setTranslations(translations);
+        if (isLanguageChecked) {
+          const languageCode = MAP_LANGUAGE_TO_LANGUAGE_CODE[language.language];
+          const translations = await getTranslations(languageCode);
+          setTranslations(translations);
+          localStorage.setItem(LANGUAGE_KEY, JSON.stringify(language));
+        }
       } catch (error) {
         console.error(error);
         console.error('Something went wrong fetching language translations!');
       }
     })();
-  }, [language]);
+  }, [language, isLanguageChecked]);
 
   return (
     <LanguageTranslationsContext.Provider value={{ language, translations, handleLanguageChange }}>
