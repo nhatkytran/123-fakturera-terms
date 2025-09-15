@@ -5,6 +5,11 @@
   padding-top: var(--spacing-md);
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .container {
   width: 90%;
 }
