@@ -7,7 +7,7 @@ export default function MainBackground() {
       <img
         className={styles.backgroundImage}
         src="https://storage.123fakturera.se/public/wallpapers/sverige43.jpg"
-        alt="Nature background"
+        alt=""
       />
     </div>
   );
