@@ -1,23 +1,30 @@
 import { useLanguageTranslations } from '@/shared/hooks';
 import styles from './Content.module.css';
 
-const test =
-  '<b>BY</b> clicking Invoice Now, you choose to register according to the information that you have typed in and the text on the registration page and the terms here, and you at the same time accept the terms here.';
-
 /** Content component. */
 export default function Content() {
-  const { translations } = useLanguageTranslations();
-
-  // eslint-disable-next-line no-console
-  console.log(translations);
+  const {
+    translations: {
+      terms: { textStartGroup, textMiddleGroup, textEndGroup },
+    },
+  } = useLanguageTranslations();
 
   return (
     <div className={styles.contentBox}>
       <div>
-        <p className={styles.contentText} dangerouslySetInnerHTML={{ __html: test }}></p>
+        {textStartGroup.map((text, index) => (
+          <p key={index} className={styles.contentText} dangerouslySetInnerHTML={{ __html: text }}></p>
+        ))}
       </div>
       <div>
-        <p className={styles.contentText} dangerouslySetInnerHTML={{ __html: test }}></p>
+        {textMiddleGroup.map((text, index) => (
+          <p key={index} className={styles.contentText} dangerouslySetInnerHTML={{ __html: text }}></p>
+        ))}
+      </div>
+      <div>
+        {textEndGroup.map((text, index) => (
+          <p key={index} className={styles.contentText} dangerouslySetInnerHTML={{ __html: text }}></p>
+        ))}
       </div>
     </div>
   );
