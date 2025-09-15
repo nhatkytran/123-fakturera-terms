@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { getTranslations } from '@/api/services';
+import { useLanguageTranslations } from '@/shared/hooks';
 import styles from './Content.module.css';
 
 const test =
@@ -8,6 +9,11 @@ const test =
 
 /** Content component. */
 export default function Content() {
+  const { translations } = useLanguageTranslations();
+
+  // eslint-disable-next-line no-console
+  console.log(translations);
+
   useEffect(() => {
     (async () => {
       const translations = await getTranslations();
